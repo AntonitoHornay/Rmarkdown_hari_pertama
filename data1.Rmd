@@ -1,0 +1,28 @@
+---
+title: "Coba"
+author: "Anto"
+date: "December 14, 2018"
+output: html_document
+---
+# Deskripsi Data
+Data yang digunakan adalah data sekunder spesifikasi 428 mobil baru di Amerika pada tahun 2004. Data tersebut merupakan data _American New Cars and Trucks 2004_. Data ini diambil pada hari Sabtu, tanggal 15 April 2017 pukul 16.00 melalui website http://new.censusatschool.org.nz
+```{r, include=FALSE}
+library(DT)
+library(psych)
+library(ggplot2)
+library(corrplot)
+```
+
+```{r}
+data1=read.csv("E:/ADI BUANA/PELATIHAN R/EconomistData.csv", header=T)
+data1
+head(data1)
+
+```
+
+
+# Eksplorasi Data {.tabset}
+Berikut adalah korelasi antar variabel dari data _American New Cars and Trucks_ 2004.
+```{r}
+corrplot(cor(data1[3:5]),type="lower",method="circle")
+```
